@@ -20,13 +20,13 @@ public:
         
     vector<int> path;
         
-    helper(results, path, n, 2);
+    dfs(results, path, n, 2);
     return results;
   }
     
-  void helper(vector<vector<int>> &results, vector<int> &path, int n, int div) {
+  void dfs(vector<vector<int>> &results, vector<int> &path, int n, int div) {
     if (n == 1) {
-      if (path.size() > 1) { //not path.empty()
+      if (path.size() > 1) { //not path.empty(), > 1, not >= because like 37
 	results.push_back(path);
       }
       return;
